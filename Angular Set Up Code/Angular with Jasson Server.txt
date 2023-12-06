@@ -1,0 +1,24 @@
+1. Install Json Server Globally
+	*npm i -g json-server
+	*json-server --watch db.json(Keep active with a separate terminal)
+2. Now Take a Component
+	*ng g c componentName
+3. Take Service ts file
+	*ng g s service/serviceName
+4. Take A model ts file
+	*Manually genarate
+5. Now prepare Model ts file
+6. Now Prepare Service ts
+7. Work on component ts file
+8. Work on app.modules.ts (Import)
+	*FormModules
+	*ReactiveFormModules
+	*HttpClientModules
+	*provideHttpClient
+	*withFetch
+	*map
+	
+	*also more as needed
+9. Work on UI (html)
+	
+
