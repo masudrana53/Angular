@@ -1,0 +1,264 @@
+<!-- <mat-toolbar color="primary">
+    
+    <h1 >Student Form </h1>
+    <span class="example-spacer"></span>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Button</button>
+   
+  </mat-toolbar> -->
+
+<!-- <mat-toolbar color="primary" class="custom-toolbar">
+    <div class="left-content">
+      <h1>Student Form</h1>
+    </div>
+    <div class="right-content">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Student</button>
+    </div>
+  </mat-toolbar>
+  
+  
+
+<div class="container">
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Eamil</th>
+                <th>Subject</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of formData">
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.gender}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.subject}}</td>
+                <td>{{row.address}}</td>
+
+                <td>
+                    <button class="btn btn-warning mx-1" (click)="onEdit(row)" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit</button>
+                    <button class="btn btn-danger mx-1" (click)="deleteForm(row)">Delete</button>
+                </td>
+
+            </tr>
+        </tbody>
+
+    </table>
+</div> -->
+
+
+
+<mat-toolbar color="primary" class="custom-toolbar">
+    <div class="left-content">
+        <h1>Student Form</h1>
+    </div>
+    <div class="right-content">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Student</button>
+    </div>
+</mat-toolbar>
+
+<div class="container">
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>Roll</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Marks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of formData" class="text-center">
+                <!-- <td>{{row.id}}</td> -->
+                <td>{{row.roll}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.department}}</td>
+                <td>{{row.marks}}</td>
+
+
+
+                <td>
+                    <button class="btn btn-warning mx-1" (click)="onEdit(row)" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit</button>
+                    <button class="btn btn-danger mx-1" (click)="deleteForm(row)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div style="display: flex; justify-content: space-between; width: 400px;">
+    <!-- Material Design List -->
+    <mat-list role="list">
+        <mat-list-item role="listitem">Item 1</mat-list-item>
+        <mat-list-item role="listitem">Item 2</mat-list-item>
+        <mat-list-item role="listitem">Item 3</mat-list-item>
+    </mat-list>
+
+    <!-- Date Picker -->
+    <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+
+<div>
+<mat-grid-list cols="5" rowHeight="2:3">
+    <mat-grid-tile><img src="../../assets/ronaldo-1.jpg" alt="Image 1"></mat-grid-tile>
+    <mat-grid-tile><img src="../../assets/ronaldo-1.jpg" alt="Image 2"></mat-grid-tile>
+    <mat-grid-tile><img src="../../assets/ronaldo-1.jpg" alt="Image 3"></mat-grid-tile>
+    <mat-grid-tile><img src="../../assets/ronaldo-1.jpg" alt="Image 4"></mat-grid-tile>
+    <mat-grid-tile><img src="../../assets/ronaldo-1.jpg" alt="Image 5"></mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="male" value="male"
+                                    formControlName="gender">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="female" value="female"
+                                    formControlName="gender">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="gardening" value="jee" formControlName="subject_JEE">
+                              <label class="form-check-label" for="JEE">JEE</label>
+                            </div>
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="shopping" value="web" formControlName="subject_WEB">
+                              <label class="form-check-label" for="Web">Web</label>
+                            </div>
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="reading" value="nt" formControlName="subject_NT">
+                              <label class="form-check-label" for="NT">NT</label>
+                            </div>                                                   
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <select class="form-select" formControlName="address">
+                                <option value="" disabled selected>Select one</option>
+                                <option value="Dhanmondi">Dhanmondi</option>
+                                <option value="Mirpur">Mirpur</option>
+                                <option value="Banani">Banani</option>
+
+                            </select>
+
+                        </div>
+                       
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" (click)="saveForm()">Save</button>
+                    <button type="button" class="btn btn-primary" (click)="editForm()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label class="form-label">Roll</label>
+                        <input type="text" class="form-control" formControlName="roll">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <div class="d-flex">
+                            <div class="form-check me-3">
+                                <input type="checkbox" class="form-check-input" id="jee" value="jee"
+                                    formControlName="department_JEE">
+                                <label class="form-check-label" for="JEE">JEE</label>
+                            </div>
+                            <div class="form-check me-3">
+                                <input type="checkbox" class="form-check-input" id="web" value="web"
+                                    formControlName="department_WEB">
+                                <label class="form-check-label" for="Web">Web</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="nt" value="nt"
+                                    formControlName="department_NT">
+                                <label class="form-check-label" for="NT">NT</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Marks</label>
+                        <input type="text" class="form-control" formControlName="marks">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="saveForm()">Save</button>
+                <button type="button" class="btn btn-primary" (click)="editForm()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

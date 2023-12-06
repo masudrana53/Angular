@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "roll": "55",
+      "name": "Rana Mahamud",
+      "department": [
+        "WEB"
+      ],
+      "marks": "70"
+    },
+    {
+      "id": 2,
+      "roll": "15",
+      "name": "Jarif Rahaman",
+      "department": [
+        "WEB"
+      ],
+      "marks": "50"
+    },
+    {
+      "id": 3,
+      "roll": "60",
+      "name": "Hasan ",
+      "department": [
+        "JEE"
+      ],
+      "marks": "50"
+    },
+    {
+      "id": 8,
+      "roll": "65",
+      "name": "sdfds",
+      "department": [
+        "WEB"
+      ],
+      "marks": "40"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
