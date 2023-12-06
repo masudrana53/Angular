@@ -1,0 +1,86 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "name": "Masud Rana",
+      "gender": "male",
+      "email": "masud@gmail.com",
+      "subject": false,
+      "address": "Dhanmondi"
+    },
+    {
+      "id": 3,
+      "name": "Hasan Patoyari",
+      "gender": "male",
+      "email": "pataoyari",
+      "subject": true,
+      "address": "Mirpur"
+    },
+    {
+      "id": 4,
+      "name": "Hasan",
+      "gender": "male",
+      "email": "FDSDFSD",
+      "subject": true,
+      "address": "Dhanmondi"
+    },
+    {
+      "id": 5,
+      "name": "GFDDS",
+      "gender": "female",
+      "email": "FSDF",
+      "subject": true,
+      "address": "Mirpur"
+    },
+    {
+      "id": 6,
+      "name": "Faruk",
+      "gender": "male",
+      "email": "ffffff",
+      "subject": false,
+      "address": "Mirpur"
+    },
+    {
+      "id": 7,
+      "name": "FSDFSD",
+      "gender": "female",
+      "email": "FSDF",
+      "subject": true,
+      "address": "Dhanmondi"
+    },
+    {
+      "id": 8,
+      "name": "fsdf",
+      "gender": "male",
+      "email": "ffggg",
+      "subject": true,
+      "address": "Mirpur"
+    },
+    {
+      "id": 10,
+      "name": "FSSDF",
+      "gender": "female",
+      "email": "FSASDFDSF",
+      "subject": [
+        "JEE",
+        "NT"
+      ],
+      "address": "Mirpur"
+    },
+    {
+      "id": 11,
+      "name": "dfsdf",
+      "gender": "male",
+      "email": "fdsds",
+      "subject": [
+        "JEE",
+        "WEB"
+      ],
+      "address": "Mirpur"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

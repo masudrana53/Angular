@@ -1,0 +1,6 @@
+.center-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px; /* Adjust the gap between the button and other elements if needed */
+  }

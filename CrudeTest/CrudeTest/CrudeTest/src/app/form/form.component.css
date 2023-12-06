@@ -1,0 +1,27 @@
+.center-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px; /* Adjust the gap between the button and other elements if needed */
+  }
+
+  .custom-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left-content{
+      text-align: center;
+      flex-grow: 1; /* Allow the center content to take up available space */
+    }
+  
+
+  .right-content {
+    margin-right: auto; /* Pushes content to the left */
+  }
+  
+ 
+  
+  
+  

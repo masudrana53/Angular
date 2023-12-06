@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 3,
+      "name": "Rajib Al Ahmed",
+      "gender": "female",
+      "email": "rajibahmedjhinuk@gmail.com",
+      "subject": true,
+      "address": "Mirpur"
+    },
+    {
+      "id": 4,
+      "name": "yhtji",
+      "gender": "male",
+      "email": "g nfghgjghj",
+      "subject": true,
+      "address": "Mirpur"
+    },
+    {
+      "id": 5,
+      "name": "Akadh",
+      "gender": "male",
+      "email": "hg kjhh@fvyhg",
+      "subject": true,
+      "address": "Dhanmondi"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
