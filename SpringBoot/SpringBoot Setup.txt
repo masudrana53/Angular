@@ -12,3 +12,19 @@
 	*Spring Boot DevTools
 	*MySQL Driver
 	*Thymeleaf
+
+
+Way to work__
+
+In java_example.com
+	*MODEL
+		*class
+	*REPOSITORY
+		*interface
+	*SERVICE
+		*class
+	*CONTROLLER
+		*class
+
+In resources_templates
+	*INDEX HTML
