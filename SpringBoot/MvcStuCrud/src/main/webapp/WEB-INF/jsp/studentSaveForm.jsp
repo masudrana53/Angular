@@ -55,33 +55,47 @@
     
     
     <body>
-        
         <h1>Student Form</h1>
 
     <form method="post" action="/stusave" modelAttribute="student">
         <table>
-            
-            <tr>
-                <td>Roll</td>
-                <td><input type="text" name="roll"></td>
-            </tr>
-            
-            <tr>
-                <td>Name</td>
-                <td><input type="text" name="name"></td>
-            </tr>
-            <tr>
-                <td>Department</td>
-                <td><input type="text" name="department"></td>
-            </tr>
-            <tr>
-                <td>Marks</td>
-                <td><input type="text" name="marks"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="Save"></td>
-            </tr>
-        </table>
+    <tr>
+        <td>Roll</td>
+        <td><input type="text" name="roll"></td>
+    </tr>
+
+    <tr>
+        <td>Name</td>
+        <td><input type="text" name="name"></td>
+    </tr>
+    
+    <tr>
+        <td>Gender</td>
+        <td>
+            <!-- Radio buttons for gender -->
+            <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
+            <input type="radio" name="gender" value="female" id="female"><label for="female">Female</label>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>Departments</td>
+        <td>
+            <!-- Dropdown (select) for department -->
+            <select name="department">
+                <option value="JEE">JEE</option>
+                <option value="PHP">PHP</option>
+                <option value="GAVE">GAVE</option>
+                <!-- Add more departments as needed -->
+            </select>
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="2"><input type="submit" value="Save"></td>
+    </tr>
+</table>
+
          
     </form>
         

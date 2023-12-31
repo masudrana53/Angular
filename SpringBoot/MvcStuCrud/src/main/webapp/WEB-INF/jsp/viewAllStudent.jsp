@@ -78,7 +78,7 @@
                 <th>Roll</th>
                 <th>Name</th>
                 <th>Department</th>
-                <th>Marks</th>
+                <th>Gender</th>
                 <th>Action</th>
             </tr>
         </thead>
