@@ -25,6 +25,7 @@ In java_example.com
 		*class
 	*CONTROLLER
 		*class
+	*Security
 
 In resources_templates
 	*INDEX HTML
