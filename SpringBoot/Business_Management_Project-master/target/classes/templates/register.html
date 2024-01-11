@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>TEA : REGISTER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/Register.css}" />
+</head>
+
+<body>
+<nav th:replace="~{Navigation::navbar()}">
+</nav>
+<div class="RegisterContainer">
+    <div class="user">
+        <div class="content">
+            <h2> Register <span style="color:green;">Here</span></h2>
+            <form action="" th:action="@{/userRegister}" class="form" method="post">
+                <b>Email :</b>
+                <input type="email" name="userEmail" placeholder="Enter email" required>
+                <!-- Add validation/error messages if needed -->
+                <br />
+
+                <b>Password:</b>
+                <input type="password" name="userPassword" placeholder="Enter password" required maxlength="8"
+                       minlength="4">
+                <!-- Add validation/error messages if needed -->
+                <br />
+
+                <!-- Add more fields as needed for user registration -->
+
+                <button type="submit" class="registerButton">Register</button><br>
+
+                <p>Already have an account? <a href="login.html" style="color: green;">Login Here</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
