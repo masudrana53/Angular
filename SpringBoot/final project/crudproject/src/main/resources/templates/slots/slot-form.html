@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Slot Form</h2>
+    <form th:action="@{/parkings/saveslot}" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="slots">Slots</label>
+            <input type="text" class="form-control" id="slots" name="slots" th:field="*{slot.slots}" required>
+            <div class="invalid-feedback">
+                Please enter the slots.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="status">Status</label>
+            <input type="text" class="form-control" id="status" name="status" th:field="*{slot.status}" required>
+            <div class="invalid-feedback">
+                Please enter the status.
+            </div>
+        </div>
+        <!-- Add Button -->
+        <button type="submit" class="btn btn-primary">Save</button>
+
+        <a th:href="@{'/parkings'}" class="btn btn-primary">Cancel</a>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Park</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Custom CSS for centering the form */
+        .custom-form-container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd; /* Add a border for outline */
+            padding: 20px; /* Add padding for better spacing */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            margin-top: 20px; /* Add margin at the top for spacing */
+        }
+        /* Additional spacing */
+        .custom-form-container .form-group {
+            margin-bottom: 15px;
+        }
+        .custom-form-container .btn {
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+        /* Reduce space between buttons */
+        .custom-form-container .btn-cancel {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5 custom-form-container">
+    <h2 class="text-center">Booking Park</h2>
+    <form th:action="@{/parkings/bookings/savenew}" method="post" class="needs-validation custom-form" novalidate>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control form-control-sm" id="firstName" name="firstName" th:field="*{booking.firstName}" required>
+                    <div class="invalid-feedback">
+                        Please enter the first name.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control form-control-sm" id="lastName" name="lastName" th:field="*{booking.lastName}" required>
+                    <div class="invalid-feedback">
+                        Please enter the last name.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control form-control-sm" id="email" name="email" th:field="*{booking.email}" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" class="form-control form-control-sm" id="phoneNumber" name="phoneNumber" th:field="*{booking.phoneNumber}" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid phone number.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Parking Name -->
+                <div class="form-group">
+                    <label for="parkingName">Parking Name</label>
+                    <input type="text" class="form-control form-control-sm" id="parkingName" name="parkingName" th:field="*{booking.parkingName}" required>
+                    <div class="invalid-feedback">
+                        Please enter the parking name.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Select Slot (Drop-down) -->
+                <div class="form-group">
+                    <label for="selectSlot">Select Slot</label>
+                    <select class="form-control form-control-sm" id="selectSlot" name="selectSlot" th:field="*{booking.selectSlot}" required>
+                        <option value="">Select Slot</option>
+                        <option value="">Slot-1</option>
+                        <option value="">Slot-1</option>
+                        <!-- Add slot options here -->
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a slot.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- From Date -->
+                <div class="form-group">
+                    <label for="fromDate">From Date</label>
+                    <input type="date" class="form-control form-control-sm" id="fromDate" name="fromDate" th:field="*{booking.fromDate}" required>
+                    <div class="invalid-feedback">
+                        Please enter the from date.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- To Date -->
+                <div class="form-group">
+                    <label for="toDate">To Date</label>
+                    <input type="date" class="form-control form-control-sm" id="toDate" name="toDate" th:field="*{booking.toDate}" required>
+                    <div class="invalid-feedback">
+                        Please enter the to date.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- From Time -->
+                <div class="form-group">
+                    <label for="fromTime">From Time</label>
+                    <input type="time" class="form-control form-control-sm" id="fromTime" name="fromTime" th:field="*{booking.fromTime}" required>
+                    <div class="invalid-feedback">
+                        Please enter the from time.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- To Time -->
+                <div class="form-group">
+                    <label for="toTime">To Time</label>
+                    <input type="time" class="form-control form-control-sm" id="toTime" name="toTime" th:field="*{booking.toTime}" required>
+                    <div class="invalid-feedback">
+                        Please enter the to time.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Button -->
+        <button type="submit" class="btn btn-primary btn-sm">Book Now</button>
+        <a th:href="@{'/parkings'}" class="btn btn-secondary btn-sm btn-cancel">Cancel</a>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
