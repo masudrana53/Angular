@@ -15,13 +15,11 @@ public class Slots {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String slots;
+    private int slots;
     private String status;
 
     @ManyToOne
     @JoinColumn
     private Parking parkingtoslot;
-
-
 
 }

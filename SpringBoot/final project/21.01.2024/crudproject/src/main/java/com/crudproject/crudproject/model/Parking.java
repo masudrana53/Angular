@@ -9,19 +9,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "slots")
-public class Slots {
+@Table(name = "parking")
 
+public class Parking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String slots;
-    private String status;
-
-    @ManyToOne
-    @JoinColumn
-    private Parking parkingtoslot;
-
-
-
+    private String name;
+    private String address;
+    private int slotnumber;
 }
