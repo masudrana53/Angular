@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking Details</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container mt-3">
+    <h2>Parking Details</h2>
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9" th:text="${parking.id}"></dd>
+
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9" th:text="${parking.name}"></dd>
+
+        <dt class="col-sm-3">Address</dt>
+        <dd class="col-sm-9" th:text="${parking.address}"></dd>
+
+        <dt class="col-sm-3">Slot Number</dt>
+        <dd class="col-sm-9" th:text="${parking.slotnumber}"></dd>
+    </dl>
+    <a th:href="@{'/parkings'}" class="btn btn-primary">Back to List</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

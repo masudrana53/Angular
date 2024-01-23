@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Booking</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Add your custom styles if needed */
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">Edit Booking</h2>
+    <form th:action="@{'/bookings/edit/' + ${booking.id}}" method="post" class="custom-form">
+        <!-- Input fields for editing booking details -->
+        <div class="row mb-3">
+            <div class="col">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" th:field="*{booking.firstName}" required>
+            </div>
+            <div class="col">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" th:field="*{booking.lastName}" required>
+            </div>
+        </div>
+        <!-- Add other fields as needed -->
+        <!-- Add an update button -->
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a th:href="@{'/bookings/list'}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

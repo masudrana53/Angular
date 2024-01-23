@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking List</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Custom CSS for additional styling */
+        .heading-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-3">
+    <!-- Heading in a different div -->
+    <div class="heading-container">
+        <h2>Parking List</h2>
+    </div>
+
+    <!-- Table container with additional space -->
+    <div class="table-container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Parking Name</th>
+                <th>Address</th>
+                <th>Number of slots</th>
+                <th>Action</th>
+                <th>View slots</th>
+                <th>Book Park</th>
+            </tr>
+            </thead>
+            <tbody>
+        <tr th:each="parking : ${parkings}" class="table-container">
+<!--            <td th:text="${parking.id}"></td>-->
+            <td th:text="${parking.name}"></td>
+            <td th:text="${parking.address}"></td>
+            <td th:text="${parking.slotnumber}"></td>
+
+
+
+            <td>
+                <a th:href="@{'/parkings/' + ${parking.id}}" class="btn btn-info btn-sm">Details</a>
+                <a th:href="@{'/parkings/edit/' + ${parking.id}}" class="btn btn-warning btn-sm">Edit</a>
+                <a th:href="@{'/parkings/delete/' + ${parking.id}}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+
+            <td>
+                <a th:href="@{'/parkings/slot-form/' + ${parking.id}}" class="btn btn-secondary">View Slots</a>
+<!--                <a th:href="@{'/parkings/newslot/new?id=' + ${slot.id}}">View Slots</a>-->
+            </td>
+
+            <td>
+                <a th:href="@{'/parkings/bookings/' + ${parking.id}}" class="btn btn-primary">Book Parking</a>
+            </td>
+        </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{'/parkings/parkingform'}" class="btn btn-success">Add Parking</a>
+
+        <a th:href="@{'/parkings/list'}" class="btn btn-secondary">View Booked Parking</a>
+
+        <!-- Move the button outside the table and align it to the right -->
+<!--        <div class="d-flex justify-content-end">-->
+<!--            <a th:href="@{'/parkings/list'}" class="btn btn-success">View Booked Parking</a>-->
+<!--        </div>-->
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

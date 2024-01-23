@@ -20,7 +20,7 @@ public class SigninController {
     public String showSigninForm(){
         return "user/signin";
     }
-    
+
     @PostMapping("/signin")
     public String processSignin(User user, Model model) {
         // Check if the user exists with the provided username and password
