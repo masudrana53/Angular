@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            /*background-image: url('https://img.freepik.com/free-photo/empty-garage-with-parking-lots-with-concrete-ceiling-flooring-pillars-marked-with-numbers_342744-1241.jpg?size=626&ext=jpg&ga=GA1.1.1632057498.1704206471&semt=ais');*/
+            background-image: url("/assets/img/carbackground.jpg");
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* Change text color to white */
+            background-color: #000000; /* Change background color to black */
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .card {
+            background: rgba(10, 9, 9, 0.8); /* Semi-transparent white background for the card */
+        }
+
+        .card-title {
+            color: #ffffff; /* Change title color to black */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Change primary button color to blue */
+            border-color: #007bff;
+
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Change primary button hover color */
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Login</h2>
+
+                    <form method="post" th:action="@{/parkings/loginin}" th:object="${user}">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input required="required" class="form-control" name="em" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input required="required" type="password" class="form-control" name="ps"
+                                   placeholder="Enter your password">
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Display error message if it exists -->
+                            <p th:if="${errMsg}" class="text-danger" th:text="${errMsg}"></p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

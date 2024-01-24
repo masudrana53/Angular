@@ -1,0 +1,144 @@
+<div th:include="header.html"></div>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Management CRUD</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Hotel Management</h2>
+    <button class="btn btn-success" data-toggle="modal" data-target="#addHotelModal">Add Hotel</button>
+
+    <!-- Hotel Table -->
+    <table class="table mt-3">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="hotelTableBody">
+        <!-- Hotel data will be inserted here dynamically -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Add Hotel Modal -->
+<div class="modal" id="addHotelModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Hotel</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addHotelForm">
+                    <div class="form-group">
+                        <label for="hotelName">Name:</label>
+                        <input type="text" class="form-control" id="hotelName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hotelLocation">Location:</label>
+                        <input type="text" class="form-control" id="hotelLocation" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Hotel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    // Sample hotel data
+    const hotels = [
+        { id: 1, name: 'Hotel A', location: 'City A' },
+        { id: 2, name: 'Hotel B', location: 'City B' },
+        // Add more data as needed
+    ];
+
+    // Function to render the hotel table
+    function renderHotelTable() {
+        const tableBody = document.getElementById('hotelTableBody');
+        tableBody.innerHTML = '';
+
+        hotels.forEach(hotel => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                    <td>${hotel.id}</td>
+                    <td>${hotel.name}</td>
+                    <td>${hotel.location}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editHotel(${hotel.id})">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteHotel(${hotel.id})">Delete</button>
+                    </td>
+                `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    // Function to add a new hotel
+    function addHotel(name, location) {
+        const newHotel = {
+            id: hotels.length + 1,
+            name: name,
+            location: location
+        };
+        hotels.push(newHotel);
+        renderHotelTable();
+        $('#addHotelModal').modal('hide');
+    }
+
+    // Function to edit a hotel (not implemented in this example)
+    function editHotel(id) {
+        // You can implement the edit functionality as needed
+        console.log('Edit hotel with ID:', id);
+    }
+
+    // Function to delete a hotel
+    function deleteHotel(id) {
+        const index = hotels.findIndex(hotel => hotel.id === id);
+        if (index !== -1) {
+            hotels.splice(index, 1);
+            renderHotelTable();
+        }
+    }
+
+    // Event listener for the add hotel form
+    document.getElementById('addHotelForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const hotelName = document.getElementById('hotelName').value;
+        const hotelLocation = document.getElementById('hotelLocation').value;
+        addHotel(hotelName, hotelLocation);
+    });
+
+    // Initial rendering of the hotel table
+    renderHotelTable();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+<div th:include="footer.html"></div>
