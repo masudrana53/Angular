@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="text-center">
+<div class="container mt-5">
+
+
+
+    <p><span th:text="${slot.name}"></span></p>
+    <p>Total Slots: <span th:text="${slot.slotnumber}"></span></p>
+
+    <h2>Details of Slot</h2>
+    <a th:href="@{'/parkings'}" class="btn btn-primary mb-3">Back to List</a>
+
+    <table class="table mx-auto">
+        <thead>
+        <tr class="table-primary">
+            <th>Slots Number</th>
+<!--            <th>Parking number</th>-->
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="index : ${#numbers.sequence(1, slot.slotnumber)}">
+<!--            <td th:text="${index}"></td>-->
+<!--            <td th:text="${slot.name}"></td> &lt;!&ndash; Add this line to display the slot name &ndash;&gt;-->
+            <td th:text="'Slot No - ' + ${index}"></td>
+
+            <!-- Check if the current slot index matches any of the booking selectSlot values -->
+<!--            <td th:text="${#sets.contains(bookings.![selectSlot], index) && bookings.![parkingName].contains(slot.name) ? 'Active' : 'Inactive'}"-->
+<!--                th:style="${#sets.contains(bookings.![selectSlot], index) && bookings.![parkingName].contains(slot.name) ? 'color: green;' : 'color: red;'}"></td>-->
+<!--            <td>-->
+<!--            Main method work-->
+<!--            <td th:with="isActive=${#sets.contains(bookings.![selectSlot], index) && bookings.![parkingName].contains(slot.name)}"-->
+<!--                th:style="${isActive ? 'background-color: green; color: white;' : 'background-color: gray; color: white;'}">-->
+<!--                <span th:text="${isActive ? 'Booked' : 'Available'}"></span>-->
+<!--            </td>-->
+            <!--            Main method work-->
+
+            <td th:with="isActive=${#sets.contains(bookings.![selectSlot], index) && bookings.![parkingName].contains(slot.name)}"
+                th:style="${isActive ? 'background-color: green; color: white;' : 'background-color: gray; color: white;'}">
+                <span th:text="${isActive ? 'Booked' : 'Available'}"></span>
+            </td>
+
+                <th:if test="${#sets.contains(bookings.![selectSlot], index)}">
+                    <!-- Display the text when there is a match -->
+<!--                    <h4 style="color: green;">Match</h4>-->
+                </th:if>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--<tr th:each="booking : ${bookings}">-->
+<!--    <td th:text="${booking.selectSlot}"></td>-->
+<!--    <td th:text="${booking.parkingName}"></td>-->
+<!--</tr>-->
+
+
+    <div class="container mt-5">
+    </div>
+
+        <div class="container">
+
+        </div>
+
+
+<div>
+<hr>
+    <h2>Reserved Slots</h2>
+<!--    <p><span th:text="${slot.name}"></span></p>-->
+<!--    <p>Total Slots: <span th:text="${slot.slotnumber}"></span></p>-->
+
+    <table class="table mx-auto">
+        <thead>
+        <tr class="table-primary">
+            <th>Slots</th>
+            <th>Parking Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over bookings and populate rows -->
+        <tr th:each="booking : ${bookings}">
+            <td th:text="'Slot No - '+ ${booking.selectSlot}"></td>
+<!--            <td th:text="${booking.selectSlot}"></td>-->
+            <td th:text="${booking.parkingName}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Include Bootstrap JS and Popper.js (if needed) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofKbDkL5X0HEeFqq2JqFvN5dQ8iRT9KqFj"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

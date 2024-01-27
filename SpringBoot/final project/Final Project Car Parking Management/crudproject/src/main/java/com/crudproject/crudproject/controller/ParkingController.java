@@ -127,9 +127,6 @@ public String slotform(@PathVariable int id, Model model){
     public String getBookingList(Model model) {
         List<Booking> bookings = bookingService.getAllBookings();
         model.addAttribute("bookings", bookings);
-
-
-
         return "booking/booking-list";
     }
 

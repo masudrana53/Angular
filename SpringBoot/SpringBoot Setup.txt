@@ -22,10 +22,10 @@ In java_example.com
 		*class
 	*REPOSITORY
 		*interface
-	*SERVICE
-		*class
 	*CONTROLLER
 		*class
+	*SERVICE (If need write logic will be use this package)
+		*class	
 	*Security
 
 In resources_templates
