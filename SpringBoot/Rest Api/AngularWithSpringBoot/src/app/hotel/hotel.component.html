@@ -1,0 +1,27 @@
+<p>hotel works!</p>
+
+<!-- hotel.component.html -->
+
+<div>
+    <h2>Hotel Form</h2>
+  
+    <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()">
+      <label for="name">Hotel Name:</label>
+      <input type="text" id="name" formControlName="name" required>
+  
+      <label for="location">Hotel Location:</label>
+      <input type="text" id="location" formControlName="location" required>
+  
+      <button type="submit" [disabled]="!hotelForm.valid">Submit</button>
+    </form>
+  
+    <hr>
+  
+    <h2>Hotels List</h2>
+    <ul>
+      <li *ngFor="let hotel of hotels">
+        {{ hotel.name }} - {{ hotel.location }}
+      </li>
+    </ul>
+  </div>
+  
