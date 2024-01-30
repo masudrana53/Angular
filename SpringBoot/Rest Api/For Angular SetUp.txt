@@ -1,0 +1,14 @@
+Way to work__
+
+	*MODEL
+		*class
+
+	*Create_SERVICE 
+
+	*Component
+		*Start .ts
+		*Start .html
+
+	
+	
+	
