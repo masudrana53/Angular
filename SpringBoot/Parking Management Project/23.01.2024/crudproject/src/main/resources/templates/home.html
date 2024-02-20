@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .jumbotron {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 60px;
+            margin-bottom: 0;
+        }
+
+        .gallery-item {
+            margin-bottom: 30px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .caption {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>Welcome to Hotel Booking System</h1>
+    <p>Find the perfect stay for your trip</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="gallery-item">
+<!--                <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">-->
+                <img src="assets/img/image-1.jpg" alt="image-1">
+                <div class="caption">
+                    <h3>Poolside Relaxation</h3>
+                    <p>Unwind by our luxurious poolside and enjoy refreshing drinks served by our attentive staff.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <img src="assets/img/image-2.jpg" alt="Image 2">
+                <div class="caption">
+                    <h3>Deluxe Suites</h3>
+                    <p>Experience unparalleled comfort and elegance in our spacious deluxe suites.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <img src="assets/img/image-3.jpg" alt="Image 3">
+                <div class="caption">
+                    <h3>Fine Dining</h3>
+                    <p>Indulge in a culinary journey with our world-class chefs at our fine dining restaurants.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

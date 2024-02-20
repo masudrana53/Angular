@@ -22,3 +22,12 @@
 9. Work on UI (html)
 	
 
+
+Work with rest api**
+model
+service 
+component
+app-routing-module
+
+
+
